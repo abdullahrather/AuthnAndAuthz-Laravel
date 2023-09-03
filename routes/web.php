@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\ApplicationsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HeiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UsersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +38,30 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
-        Route::get('/', [ProfileController::class, 'index'])->name('index');
+    Route::group(['prefix' => 'hei', 'as' => 'hei.'], function () {
+        Route::get('/', [HeiController::class, 'index'])->name('create');
+        Route::get('view', [HeiController::class, 'view'])->name('view');
+        Route::get('delete/{id}', [HeiController::class, 'delete'])->name('delete');
+        Route::get('edit/{id}', [HeiController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [HeiController::class, 'update'])->name('update');
+        Route::post('/', [HeiController::class, 'store']);
+    });
+
+    Route::group(['prefix' => 'application', 'as' => 'application.'], function () {
+        Route::get('/', [ApplicationsController::class, 'index'])->name('create');
+        Route::get('view', [ApplicationsController::class, 'view'])->name('view');
+        Route::get('delete/{id}', [ApplicationsController::class, 'delete'])->name('delete');
+        Route::get('edit/{id}', [ApplicationsController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [ApplicationsController::class, 'update'])->name('update');
+        Route::post('/', [ApplicationsController::class, 'store']);
+    });
+
+    Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
+        Route::get('/', [UsersController::class, 'index'])->name('create');
+        Route::get('view', [UsersController::class, 'view'])->name('view');
+        Route::get('delete/{id}', [UsersController::class, 'delete'])->name('delete');
+        Route::get('edit/{id}', [UsersController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [UsersController::class, 'update'])->name('update');
+        Route::post('/', [UsersController::class, 'store']);
     });
 });

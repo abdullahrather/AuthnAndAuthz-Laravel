@@ -32,7 +32,7 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('profile.index');
+            return redirect()->route('hei.view');
         }
         return back()->with('error', 'Incorrect email and password');
     }
@@ -83,7 +83,7 @@ class AuthController extends Controller
 
         Auth::attempt($credentials);
 
-        return redirect()->route('profile.index')->with('success', 'Congratulations, account created please login for access');
+        return redirect()->route('hei.create')->with('success', 'Congratulations, account created please login for access');
     }
 
     public function logout()

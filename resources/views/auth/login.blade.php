@@ -44,12 +44,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="captcha">
+                                <span>{!! captcha_img('math') !!}</span>
+                                <button type="button" class="btn btn-danger reload" id="reload">&#x21bb;</button>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-8">
-                                <div class="captcha">
-                                    <span>{!! captcha_img('math') !!}</span>
-                                    <button type="button" class="btn btn-danger reload" id="reload">&#x21bb;</button>
-                                </div>
                                 <span><input type="text" class="form-control" placeholder="Enter Captcha" name="captcha"
                                         id="captcha"></span>
                                 @error('captcha')

@@ -11,7 +11,7 @@ class Application extends Model
     protected $table = 'applications';
     protected $primaryKey = 'id';
 
-    public function application()
+    public function hei()
     {
         return $this->belongsTo(HEI::class, 'hei_id');
     }
