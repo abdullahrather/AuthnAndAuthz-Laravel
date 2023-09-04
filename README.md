@@ -64,3 +64,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+## Project Setup
+
+After project initilization, on running migrate command 3 roles are created via seeder in the role database table.
+
+default role value passed on sign up using registration form is of admin.
+
+different role users can be created via 'users create' form after login along with other forms
+
+then logging in with users of different roles will reflect authorization permission set using Gates policies of form fields, views, create, update, edit or delete on forms.
