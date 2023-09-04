@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
     public function index()
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
         $url = url('/user');
         $user = new User();
         $title = "User add";
@@ -50,6 +54,9 @@ class UsersController extends Controller
 
     public function view(Request $request)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
         $title = "Users List";
         $search = $request['search'] ?? "";
         if ($search != "") {
@@ -65,7 +72,9 @@ class UsersController extends Controller
 
     //Delete Query
     public function delete($id)
-    {
+    {if (! Gate::allows('admin')) {
+        abort(403);
+    }
         $user = User::find($id);
         if (!is_null($user)) {
             $user->delete();
@@ -75,6 +84,9 @@ class UsersController extends Controller
 
     public function edit($id)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
         $user = User::find($id);
         if (is_null($user)) {
             //not found
@@ -90,17 +102,25 @@ class UsersController extends Controller
 
     public function update($id, Request $request)
     {
-        $checkEmail = User::where('email', $request->email)->first();
-        if ($checkEmail) {
+        $user = User::find($id);
+        $existingUserWithEmail = User::where('email', $request->email)->where('id', '!=', $id)->first();
+
+        if ($existingUserWithEmail) {
             return back()->with('error', 'Email already exists');
         }
-        $user = User::find($id);
+
         $user->name = $request['name'];
         $user->email = $request['email'];
-        $user->password = Hash::make($request['password']);
+
+        // Only update the password if a new one is provided
+        if ($request->has('password')) {
+            $user->password = Hash::make($request['password']);
+        }
+
         $user->role_id = $request['role_id'];
         $user->save();
 
         return redirect('user/view');
     }
+
 }

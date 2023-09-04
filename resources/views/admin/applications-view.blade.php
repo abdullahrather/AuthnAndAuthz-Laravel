@@ -20,9 +20,11 @@
                 </div>
             </form>
             <div class="button-container">
-                <a href="{{ route('application.create') }}">
-                    <button class="btn btn-primary d-inline-block m-2">Add Application</button>
-                </a>
+                @if (Gate::allows('admin-hei'))
+                    <a href="{{ route('application.create') }}">
+                        <button class="btn btn-primary d-inline-block m-2">Add Application</button>
+                    </a>
+                @endif
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-sm">
@@ -45,12 +47,16 @@
                                 <td>{{ $application->hei->title }}</td>
                                 <td>
                                     <div class="button-container">
-                                        <a href="{{ route('application.delete', ['id' => $application->id]) }}">
-                                            <button class="btn btn-danger">Delete</button>
-                                        </a>
-                                        <a href="{{ route('application.edit', ['id' => $application->id]) }}">
-                                            <button class="btn btn-secondary">Edit</button>
-                                        </a>
+                                        @if (Gate::allows('admin'))
+                                            <a href="{{ route('application.delete', ['id' => $application->id]) }}">
+                                                <button class="btn btn-danger">Delete</button>
+                                            </a>
+                                        @endif
+                                        @if (Gate::allows('admin-aic'))
+                                            <a href="{{ route('application.edit', ['id' => $application->id]) }}">
+                                                <button class="btn btn-secondary">Edit</button>
+                                            </a>
+                                        @endif
                                     </div>
                                 </td>
                             </tr>

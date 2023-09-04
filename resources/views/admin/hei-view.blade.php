@@ -20,9 +20,11 @@
                 </div>
             </form>
             <div class="button-container">
-                <a href="{{ route('hei.create') }}">
-                    <button class="btn btn-primary d-inline-block m-2">Add Record</button>
-                </a>
+                @if (Gate::allows('admin'))
+                    <a href="{{ route('hei.create') }}">
+                        <button class="btn btn-primary d-inline-block m-2">Add Record</button>
+                    </a>
+                @endif
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-sm">
@@ -43,8 +45,10 @@
                                 <td>{{ $hei->title }}</td>
                                 <td class="text-center">
                                     <div class="button-container">
-                                        <a href="{{ route('hei.edit', ['id' => $hei->id]) }}"><button
-                                                class="btn btn-secondary">Edit</button></a>
+                                        @if (Gate::allows('admin'))
+                                            <a href="{{ route('hei.edit', ['id' => $hei->id]) }}"><button
+                                                    class="btn btn-secondary">Edit</button></a>
+                                        @endif
                                     </div>
                                 </td>
                             </tr>

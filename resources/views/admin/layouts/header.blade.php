@@ -24,24 +24,30 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('hei.create') }}" class="nav-link">HEI Register</a>
-                </li>
+                @if (Gate::allows('admin'))
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('hei.create') }}" class="nav-link">HEI Register</a>
+                    </li>
+                @endif
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ route('hei.view') }}" class="nav-link">HEI List</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('application.create') }}" class="nav-link">Applications</a>
-                </li>
+                @if (Gate::allows('admin-hei'))
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('application.create') }}" class="nav-link">Application Add</a>
+                    </li>
+                @endif
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ route('application.view') }}" class="nav-link">Applications List</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('user.create') }}" class="nav-link">Users</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('user.view') }}" class="nav-link">Users List</a>
-                </li>
+                @if (Gate::allows('admin'))
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('user.create') }}" class="nav-link">User Create</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('user.view') }}" class="nav-link">Users</a>
+                    </li>
+                @endif
             </ul>
 
             <!-- Right navbar links -->

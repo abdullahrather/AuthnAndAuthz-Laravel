@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Application;
 use App\Models\HEI;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ApplicationsController extends Controller
 {
     public function index()
     {
+        if (! Gate::allows('admin-hei')) {
+            abort(403);
+        }
         $url = url('/application');
         $application = new Application();
         $title = "Application";
@@ -66,6 +70,9 @@ class ApplicationsController extends Controller
 
     public function edit($id)
     {
+        if (! Gate::allows('admin-aic')) {
+            abort(403);
+        }
         $application = Application::find($id);
         if (is_null($application)) {
             //not found

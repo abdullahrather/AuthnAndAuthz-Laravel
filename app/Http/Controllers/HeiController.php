@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\HEI;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class HeiController extends Controller
 {
     public function index()
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
         $url = url('/hei');
         $hei = new HEI();
         $title = "HEI Register";
@@ -59,6 +63,9 @@ class HeiController extends Controller
 
     public function edit($id)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
         $hei = HEI::find($id);
         if (is_null($hei)) {
             //not found
