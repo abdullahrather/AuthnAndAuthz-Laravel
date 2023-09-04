@@ -1,3 +1,15 @@
+## Project Setup
+
+After project initilization, on running migrate command 3 roles are created via seeder in the role database table.
+
+default role value passed on sign up using registration form is of admin.
+
+different role users can be created via 'users create' form after login along with other forms
+
+then logging in with users of different roles will reflect authorization permission set using Gates policies of form fields, views, create, update, edit or delete on forms.
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,15 +76,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-________________________________________________________________________________________________________________________________________________________________________________________________________________
-
-## Project Setup
-
-After project initilization, on running migrate command 3 roles are created via seeder in the role database table.
-
-default role value passed on sign up using registration form is of admin.
-
-different role users can be created via 'users create' form after login along with other forms
-
-then logging in with users of different roles will reflect authorization permission set using Gates policies of form fields, views, create, update, edit or delete on forms.
