@@ -9,7 +9,7 @@
     <div class="float-right d-none d-sm-block">
         <b>All rights reserved.</b>
     </div>
-    <strong>Copyright &copy; <a href="">NTC</a>.</strong>
+    <strong>Copyright &copy; <a href="">Laravel</a>.</strong>
 </footer>
 
 <!-- Control Sidebar -->

@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @push('title')
-    <title>NTC | Applications</title>
+    <title>Laravel | Applications</title>
 @endpush
 @section('admin-main-section')
     <form action="{{ $url }}" method="post">
@@ -18,9 +18,9 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="hei_id">HEI</label>
+                        <label for="hei_id">Group</label>
                         <select name="hei_id" id="hei_id" class="form-control">
-                            <option value="">Select HEI</option>
+                            <option value="">Select Group</option>
                             @foreach ($heis as $hei)
                                 <option value="{{ $hei->id }}"
                                     {{ $application->hei_id == $hei->id || old('hei_id') == $hei->id ? 'selected' : '' }}>

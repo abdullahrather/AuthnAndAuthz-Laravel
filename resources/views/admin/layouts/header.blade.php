@@ -26,11 +26,11 @@
                 </li>
                 @if (Gate::allows('admin'))
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="{{ route('hei.create') }}" class="nav-link">HEI Register</a>
+                        <a href="{{ route('hei.create') }}" class="nav-link">Group Register</a>
                     </li>
                 @endif
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('hei.view') }}" class="nav-link">HEI List</a>
+                    <a href="{{ route('hei.view') }}" class="nav-link">Group List</a>
                 </li>
                 @if (Gate::allows('admin-hei'))
                     <li class="nav-item d-none d-sm-inline-block">
@@ -179,7 +179,7 @@
             <a href="" class="brand-link">
                 <img src="{{ url('auth/assets/img/logo_thumbnail.png') }}" alt="Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">NTC</span>
+                <span class="brand-text font-weight-light">Laravel</span>
             </a>
 
             <!-- Sidebar -->

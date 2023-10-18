@@ -15,7 +15,7 @@ class HeiController extends Controller
         }
         $url = url('/hei');
         $hei = new HEI();
-        $title = "HEI Register";
+        $title = "Group Register";
         $heis = HEI::all();
         $data = compact('url', 'hei', 'title', 'heis');
         return view('admin.hei')->with($data);;
@@ -38,7 +38,7 @@ class HeiController extends Controller
 
     public function view(Request $request)
     {
-        $title = "HEI List";
+        $title = "Group List";
         $search = $request['search'] ?? "";
         if ($search != "") {
             //where
@@ -72,7 +72,7 @@ class HeiController extends Controller
             return redirect('hei/view');
         } else {
             $url = url('/hei/update') . "/" . $id;
-            $title = "Hei Update";
+            $title = "Group Update";
             $data = compact('url', 'title', 'hei');
             return view('admin.hei')->with($data);
         }

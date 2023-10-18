@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @push('title')
-    <title>NTC | HEI List</title>
+    <title>Laravel | Group List</title>
 @endpush
 @section('admin-main-section')
     <div class="container" data-aos="fade-up">
@@ -31,7 +31,7 @@
                     <thead class="thead-dark">
                         <tr>
                             <th class="text-center">Sr.</th>
-                            <th>HEI Title</th>
+                            <th>Group Title</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
