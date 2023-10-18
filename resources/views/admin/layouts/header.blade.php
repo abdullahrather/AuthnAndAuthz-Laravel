@@ -250,7 +250,8 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper"
+            style="background-image:url('auth/assets/img/108-2000x1333.jpg'); background-repeat:no-repeat; background-size:cover;background-position: center;">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
