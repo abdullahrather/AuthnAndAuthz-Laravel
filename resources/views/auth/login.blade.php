@@ -1,6 +1,6 @@
 @extends('auth.layouts.main')
 @push('title')
-    <title>Laravel | Log in</title>
+    <title>Larave | Log in</title>
 @endpush
 @section('auth-main-section')
 
