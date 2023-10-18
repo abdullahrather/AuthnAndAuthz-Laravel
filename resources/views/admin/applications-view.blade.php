@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @push('title')
-    <title>NTC | Application List</title>
+    <title>Laravel | Application List</title>
 @endpush
 @section('admin-main-section')
     <div class="container" data-aos="fade-up">
@@ -32,7 +32,7 @@
                         <tr>
                             <th>Sr.</th>
                             <th>Application Title</th>
-                            <th>HEI Name</th>
+                            <th>Group Name</th>
                             <th>Action</th>
                         </tr>
                     </thead>

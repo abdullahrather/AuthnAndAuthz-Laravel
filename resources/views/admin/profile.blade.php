@@ -159,7 +159,7 @@
             <a href="../../index3.html" class="brand-link">
                 <img src="{{ url('auth/assets/img/logo_thumbnail.png') }}" alt="Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">NTC</span>
+                <span class="brand-text font-weight-light">Laravel</span>
             </a>
 
             <!-- Sidebar -->
@@ -261,7 +261,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>All rights reserved.</b>
             </div>
-            <strong>Copyright &copy; <a href="">NTC</a>.</strong>
+            <strong>Copyright &copy; <a href="">Laravel</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->

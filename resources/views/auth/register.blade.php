@@ -1,6 +1,6 @@
 @extends('auth.layouts.main')
 @push('title')
-    <title>NTC | Register</title>
+    <title>Laravel | Register</title>
 @endpush
 @section('auth-main-section')
 
@@ -8,7 +8,7 @@
         <div class="register-box">
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
-                    <a href="{{ route('login') }}" class="h1"><b>NTC</b> Register</a>
+                    <a href="{{ route('login') }}" class="h1"><b>Laravel</b> Register</a>
                 </div>
                 <div class="card-body">
                     <p class="login-box-msg">Register a new membership</p>

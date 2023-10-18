@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @push('title')
-    <title>NTC | Users List</title>
+    <title>Laravel | Users List</title>
 @endpush
 @section('admin-main-section')
     <div class="container" data-aos="fade-up">
