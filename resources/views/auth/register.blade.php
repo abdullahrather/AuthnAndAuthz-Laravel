@@ -4,8 +4,10 @@
 @endpush
 @section('auth-main-section')
 
-    <body class="hold-transition register-page">
-        <div class="register-box">
+    <body class="hold-transition register-page"
+        style="background-image:url('auth/assets/img/257-536x354.jpg'); background-repeat:no-repeat; background-size:cover;background-position: center;
+        background-blend-mode: luminosity;">
+        <div class="register-box" style="opacity: 0.9;">
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
                     <a href="{{ route('login') }}" class="h1"><b>Laravel</b> Register</a>

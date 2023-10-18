@@ -4,8 +4,10 @@
 @endpush
 @section('auth-main-section')
 
-    <body class="hold-transition login-page">
-        <div class="login-box">
+    <body class="hold-transition login-page"
+    style="background-image:url('auth/assets/img/42-3456x2304.jpg'); background-repeat:no-repeat; background-size:cover;background-position: center;
+    background-blend-mode: luminosity;">
+        <div class="login-box" style="opacity: 0.9;">
             <!-- /.login-logo -->
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
