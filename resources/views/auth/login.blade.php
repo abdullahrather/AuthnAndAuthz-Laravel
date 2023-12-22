@@ -1,6 +1,6 @@
 @extends('auth.layouts.main')
 @push('title')
-    <title>Laravel | Log in</title>
+    <title>Larave | Log in</title>
 @endpush
 @section('auth-main-section')
 
@@ -11,7 +11,7 @@
             <!-- /.login-logo -->
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
-                    <a href="{{ route('register') }}" class="h1"><b>Laravel</b> Login</a>
+                    <a href="{{ route('register') }}" class="h1"><b>Laravel 10</b> Login</a>
                 </div>
                 <div class="card-body">
                     <p class="login-box-msg">Sign in to start your session</p>
