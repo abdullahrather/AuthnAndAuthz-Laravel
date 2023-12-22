@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @push('title')
-    <title>Laravel | Users</title>
+    <title>Laravel 10| Users</title>
 @endpush
 @section('admin-main-section')
     <form action="{{ $url }}" method="post">
